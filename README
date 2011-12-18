@@ -1,0 +1,37 @@
+SYNOPSIS
+	pastebin.pl - Quick and simple pastebinning from the command 
+line.
+	
+	Dependencies
+		perl 5.8.8 or greater
+		curl
+
+DESCRIPTION
+	pastebin.pl provides quick and simple pastebinning using the
+	command line. Basic usage:
+
+	cat file | pastebin.pl
+
+OPTIONS
+	pastebin.pl has only one option, as it is designed to be simple 
+	and quick.
+
+	cat file | pastebin.pl 1 (DEFAULT)
+	
+		pastebins a file as private
+
+	cat file | pastebin.pl 0
+		
+		pastebins a file as public
+
+SETUP
+	`touch ~/.pastebin_dev_key`
+	login and fetch your dev key here: http://pastebin.com/api#1
+	`$EDITOR ~/.pastebin_dev_key`
+	optionally: `ln -s /path/to/pastebin.pl /bin/pastebin.pl`
+
+AUTHOR
+	Liam Zdenek
+
+BUGS
+	liamzdenek@gmail.com (Liam Zdenek)
