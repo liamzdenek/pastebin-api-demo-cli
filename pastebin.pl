@@ -3,9 +3,13 @@ use strict;
 use warnings;
 use URI::Escape;
 
+my $k = `cat ~/.pastebin_dev_key`;
+$k =~ s/\n//g;
+$k =~ s/\t//g;
+
 my %opts = (
 	api_option        => "paste",
-	api_dev_key       => `cat ~/.pastebin_dev_key`,
+	api_dev_key       => $k,
 	api_paste_private => (shift @ARGV // 1), # unless otherwise defined, private paste
 	#api_username      => '',
 	#api_user_password => '',
