@@ -5,7 +5,7 @@ use URI::Escape;
 
 my %opts = (
 	api_option        => "paste",
-	api_dev_key       => `cat .pastebin_dev_key`,
+	api_dev_key       => `cat ~/.pastebin_dev_key`,
 	api_paste_private => (shift @ARGV // 1), # unless otherwise defined, private paste
 	#api_username      => '',
 	#api_user_password => '',
