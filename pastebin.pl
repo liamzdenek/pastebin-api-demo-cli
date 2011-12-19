@@ -3,20 +3,18 @@ use strict;
 use warnings;
 use URI::Escape;
 
+my $poststring = '';
 my $k = `cat ~/.pastebin_dev_key`;
 $k =~ s/\n//g;
 $k =~ s/\t//g;
 
 my %opts = (
-	api_option        => "paste",
 	api_dev_key       => $k,
 	api_paste_private => (shift @ARGV // 1), # unless otherwise defined, private paste
 	#api_username      => '',
 	#api_user_password => '',
 	api_paste_code    => uri_escape(join '', <STDIN>),
 );
-
-my $poststring = '';
 
 $poststring .= "&$_=$opts{$_}" for(keys %opts);
 
