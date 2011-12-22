@@ -13,6 +13,7 @@ my %opts = (
 	api_paste_private => (shift @ARGV // 1), # unless otherwise defined, private paste
 	#api_username      => '',
 	#api_user_password => '',
+	api_paste_expire_date => (shift @ARGV // "1M"), #unless otherwise defined, expire after 1 month
 	api_paste_code    => uri_escape(join '', <STDIN>),
 );
 
